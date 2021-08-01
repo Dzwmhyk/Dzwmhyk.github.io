@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <id>https://dzwmhyk.github.io</id>
+    <title>陨莫Dzwmhyk</title>
+    <updated>2021-08-01T05:01:56.879Z</updated>
+    <generator>https://github.com/jpmonette/feed</generator>
+    <link rel="alternate" href="https://dzwmhyk.github.io"/>
+    <link rel="self" href="https://dzwmhyk.github.io/atom.xml"/>
+    <subtitle>哔哩哔哩：UID417937554</subtitle>
+    <logo>https://dzwmhyk.github.io/images/avatar.png</logo>
+    <icon>https://dzwmhyk.github.io/favicon.ico</icon>
+    <rights>All rights reserved 2021, 陨莫Dzwmhyk</rights>
+    <entry>
+        <title type="html"><![CDATA[嗨喽各位观众朋友们]]></title>
+        <id>https://dzwmhyk.github.io/post/hai-lou-ge-wei-guan-zhong-peng-you-men/</id>
+        <link href="https://dzwmhyk.github.io/post/hai-lou-ge-wei-guan-zhong-peng-you-men/">
+        </link>
+        <updated>2021-08-01T05:00:55.000Z</updated>
+        <content type="html"><![CDATA[<p>我们下一期作品的标题是：假如生活欺骗了你，预计在下个星期二之前完成上传</p>
+]]></content>
+    </entry>
+</feed>
