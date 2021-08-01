@@ -1,37 +1,16 @@
-## Welcome to GitHub Pages
+## 你好!我是陨莫感谢你的支持
 
-You can use the [editor on GitHub](https://github.com/Dzwmhyk/Dzwmhyk.github.io/edit/main/README.md) to maintain and preview the content for your website in Markdown files.
+你可以使用 [哔哩哔哩](https://space.bilibili.com/417937554?from=search&seid=12021332245614722996) 访问我的空间，观看我的视频动态.
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+当然你也可以加入 [交流群](https://jq.qq.com/?_wv=1027&k=H4ouWo7s)与小伙伴们一起聊天玩耍，与陨莫进行更多的互动.
 
-### Markdown
+### 一些想说的话
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+很多人问我为什么要做视频，为什么要如此执着；其实这并不难以解释，陨莫自己也特地做了一个 [视频](https://www.bilibili.com/video/BV1ab4y1k7BL?from=search&seid=6293951922605861681)来将这些故事讲给你听.
 
-```markdown
-Syntax highlighted code block
+### 不为人知的往事（周更哦）
 
-# Header 1
-## Header 2
-### Header 3
+从小，家里就管的严；不让我碰电脑。我唯一能做的只能是偷着玩；没有钥匙，不能再爸妈不在家的时候回家，所以我会以“去外公家上厕所”的理由，从正在上班的老妈手里拿到那一串钥匙，接着从窗台下面溜走，通过鲜为人知的山路跑到自己家，打开门。接着拿厕纸垫住门锁把防盗门和上，再火急火燎的赶回去送钥匙，就这样我就有了录素材的时间。
+### 欲知后事如何
 
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
-```
-
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/Dzwmhyk/Dzwmhyk.github.io/settings/pages). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://support.github.com/contact) and we’ll help you sort it out.
+回见
