@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title img src="favicon.ico" alt""> 催更陨莫ing……</title>
+  <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+  <style>
+    header {
+      background-color: #fff;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      display: flex;
+      justify-content: space-between;
+      padding: 10px;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 100;
+    }
+
+    nav ul {
+      display: flex;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    nav ul li {
+      margin-left: 20px;
+    }
+
+    nav ul li:first-child {
+      margin-left: 0;
+    }
+
+    nav ul li a {
+      color: #333;
+      text-decoration: none;
+    }
+
+    footer {
+      background-color: #f2f2f2;
+      border-top: 1px solid #ddd;
+      padding: 20px;
+      text-align: center;
+    }
+
+    #game-container {
+      width: 400px;
+      height: 400px;
+      margin: 0 auto;
+      position: relative;
+      background: linear-gradient(45deg, #f9a9a9, #a9f9f9);
+      animation: gradient 5s ease-in-out infinite;
+    }
+
+    #game-board {
+      width: 100%;
+      height: 100%;
+      border: 1px solid black;
+    }
+
+    #player {
+      width: 10px;
+      height: 10px;
+      background-color: red;
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    #player2 {
+      width: 10px;
+      height: 10px;
+      background-color: rgb(0, 60, 255);
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    @keyframes gradient {
+      0% {
+        background: linear-gradient(45deg, #f9a9a9, #a9f9f9);
+      }
+
+      50% {
+        background: linear-gradient(45deg, #a9f9f9, #f9a9a9);
+      }
+
+      100% {
+        background: linear-gradient(45deg, #f9a9a9, #a9f9f9);
+      }
+    }
+
+    h1 {
+      text-align: center;
+      margin-top: 20px;
+      font-size: 30px;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <h1>催更陨莫ing……</h1>
+    <nav>
+      <ul>
+        <li><a href="../介绍/自我介绍网站.html">首页</a></li>
+        <li><a href="https://space.bilibili.com/417937554">bilibili空间</a></li>
+        <li><a href="https://www.youtube.com/@Dzwmhyk">YouTube空间</a></li>
+        <li><a href="https://space.bilibili.com/417937554/video">作品</a></li>
+        <li><a href="../新闻与活动/新闻与活动.html">新闻与活动</a></li>
+        <li><a href="https://jq.qq.com/?_wv=1027&k=eDe84Dlq">联系</a></li>
+      </ul>
+    </nav>
+  </header>
+  <div id="coin-counter">硬币：0</div>
+  <div id="game-container">
+    <div id="game-board">
+      <div id="player"></div>
+      <div id="player2"></div>
+    </div>
+  </div>
+  <h2>游戏玩法：</h2>
+  <h3>玩家1（蓝色方块）： W：上； S：下; A：左； D：右</h3>
+  <h3>操作蓝色小方块，正常情况下每2秒获得1个硬币；碰到红色方块，投币2个；</h3>
+  <h3>硬币最多可储存49个，超出49个硬币罐将爆炸</h3>
+  <h3>硬币最少没有下限，你可以根据自己能力挑战</h3>
+  <h4>后续开放内容：闯关模式/双人模式/双人对抗/成就系统</h4>
+  <h4>更多原创内容请留意Minecraft模组更新</h4>
+  <footer>
+    <p>版权所有 &copy; 2023 陨莫</p>
+  </footer>
+  <script>
+    const player = document.getElementById("player");
+    const player2 = document.getElementById("player2");
+    const gameBoard = document.getElementById("game-board");
+
+    let x1 = 200;
+    let y1 = 200;
+    let x2 = 200;
+    let y2 = 220;
+
+    function updatePlayer1Position() {
+      player.style.left = x1 + "px";
+      player.style.top = y1 + "px";
+    }
+
+    function updatePlayer2Position() {
+      player2.style.left = x2 + "px";
+      player2.style.top = y2 + "px";
+    }
+
+    function moveRandomly() {
+      const directions = ["ArrowUp", "ArrowDown", "ArrowLeft", "ArrowRight"];
+      const randomDirection = directions[Math.floor(Math.random() * directions.length)];
+      switch (randomDirection) {
+        case "ArrowUp":
+          y1 -= 50;
+          if (y1 < 0) {
+            y1 = 0;
+          }
+          break;
+        case "ArrowDown":
+          y1 += 50;
+          if (y1 > gameBoard.clientHeight - player.clientHeight) {
+            y1 = gameBoard.clientHeight - player.clientHeight;
+          }
+          break;
+        case "ArrowLeft":
+          x1 -= 50;
+          if (x1 < 0) {
+            x1 = 0;
+          }
+          break;
+        case "ArrowRight":
+          x1 += 50;
+          if (x1 > gameBoard.clientWidth - player.clientWidth) {
+            x1 = gameBoard.clientWidth - player.clientWidth;
+          }
+          break;
+      }
+      updatePlayer1Position();
+    }
+
+    function handleKeyDown(event) {
+      switch (event.key) {
+        case "w":
+          y2 -= 10;
+          if (y2 < 0) {
+            y2 = 0;
+          }
+          break;
+        case "s":
+          y2 += 10;
+          if (y2 > gameBoard.clientHeight - player2.clientHeight) {
+            y2 = gameBoard.clientHeight - player2.clientHeight;
+          }
+          break;
+        case "a":
+          x2 -= 10;
+          if (x2 < 0) {
+            x2 = 0;
+          }
+          break;
+        case "d":
+          x2 += 10;
+          if (x2 > gameBoard.clientWidth - player2.clientWidth) {
+            x2 = gameBoard.clientWidth - player2.clientWidth;
+          }
+          break;
+      }
+      updatePlayer2Position();
+      // Check if player 1 and player 2 overlap
+      const rect1 = player.getBoundingClientRect();
+      const rect2 = player2.getBoundingClientRect();
+      if (!(rect1.right < rect2.left ||
+        rect1.left > rect2.right ||
+        rect1.bottom < rect2.top ||
+        rect1.top > rect2.bottom)) {
+        // Players overlap, set background color to red for 1.5 seconds
+        gameBoard.style.background = "red";
+        setTimeout(() => {
+          gameBoard.style.background = "linear-gradient(45deg, #f9a9a9, #a9f9f9)";
+        }, 1500);
+
+      }
+    }
+
+    setInterval(moveRandomly, 1000); // call moveRandomly every second
+
+    document.addEventListener("keydown", handleKeyDown);
+    let coinCount = 0;
+
+    function updateCoinCounter() {
+      const coinCounter = document.getElementById("coin-counter");
+      if (coinCounter) {
+        coinCount++;
+        if (coinCount >= 50) {
+          location.reload();
+        }
+        coinCounter.innerText = `硬币：${coinCount}`;
+
+      }
+    }
+
+    setInterval(updateCoinCounter, 3000);
+
+    function checkOverlap() {
+
+      const playerRect = player.getBoundingClientRect();
+      const player2Rect = player2.getBoundingClientRect();
+
+      const overlap = !(playerRect.right < player2Rect.left ||
+        playerRect.left > player2Rect.right ||
+        playerRect.bottom < player2Rect.top ||
+        playerRect.top > player2Rect.bottom);
+
+      if (overlap) {
+        coinCount -= 0.1;
+      }
+    }
+
+    setInterval(checkOverlap, 30);
+
+
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title img src="favicon.ico" alt"">陨莫的小破站</title>
+  <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background-image: url(成品测试.jpg);
+      background-size: cover;
+      color: #fff;
+      text-align: center;
+    }
+
+    #bg-video {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+    }
+
+    #overlay {
+      position: fixed;
+      top: 80px;
+      left: 80px;
+      width: calc(100% - 160px);
+      height: calc(100% - 160px);
+      background-color: rgba(0, 166, 255, 0.566);
+      border-radius: 20px;
+      display: none;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 2;
+      opacity: 0;
+      transition: opacity 2s ease-in-out;
+      box-shadow: 0 0 20px #87CEEB;
+    }
+
+    #overlay.show {
+      display: block;
+    }
+
+    #overlay ul {
+      font-size: 6em;
+      font-family: "Neon Tubes 2";
+      text-shadow: 0 0 20px #ff0000, 0 0 40px #ff0000, 0 0 60px #ff0000;
+      margin-top: 6%;
+      list-style: none
+    }
+
+    #bg-gif {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: -2;
+      opacity: 0;
+      transition: opacity 2s;
+    }
+
+    #bg-gif.show {
+      opacity: 1;
+    }
+
+    #audio-button {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      z-index: 10;
+      font-size: 2em;
+      color: #fff;
+      background-color: #00000000;
+      border: none;
+      outline: none;
+      cursor: pointer;
+    }
+
+    #ssd {
+      width: 100%;
+      height: 100%;
+      opacity: 1;
+      transition: opacity 1.5s;
+    }
+
+    #ssd.fade-out {
+      width: 100%;
+      height: 100%;
+      opacity: 0;
+    }
+  </style>
+</head>
+
+<body>
+  <img src="yon.gif" alt="" id="ssd">
+  <img src="mo.gif" alt="" id="bg-gif" />
+  <div id="overlay">
+    <ul>
+      <li>欢迎来到</li>
+      <a href="介绍\自我介绍网站.html">
+        <li>陨莫的小破站</li>
+      </a>
+    </ul>
+  </div>
+  <button id="audio-button" onclick="toggleAudio()">打开BGM</button>
+  <audio src="one.mp3" autoplay loop></audio>
+
+  <footer style="position:fixed; bottom:0px; left: 50%;
+  transform: translateX(-50%);">
+    <p>版权所有 &copy; 2023 陨莫</p>
+  </footer>
+  <script>
+    const bgGif = document.getElementById("bg-gif");
+    const overlay = document.getElementById("overlay");
+    const audio = document.querySelector("audio");
+
+
+    setTimeout(function () {
+      document.getElementById('ssd').classList.add('fade-out');
+    }, 2500);
+
+    setTimeout(function () {
+      bgGif.classList.add("show");
+      audio.play();
+    }, 3000);
+
+    setTimeout(function () {
+      overlay.style.opacity = 1;
+    }, 5000);
+
+    function toggleAudio() {
+      if (audio.paused) {
+        audio.play();
+        document.getElementById("audio-button").textContent = "暂停BGM";
+      } else {
+        audio.pause();
+        document.getElementById("audio-button").textContent = "打开BGM";
+      }
+    }
+  </script>
+</body>
+
+</html>
