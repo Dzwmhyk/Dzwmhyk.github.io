@@ -1,10 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title img src="favicon.ico" alt"">陨莫的小破站</title>
+  <title>陨莫的小破站</title>
   <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
   <style>
     body {
@@ -28,15 +27,17 @@
 
     #overlay {
       position: fixed;
-      top: 80px;
-      left: 80px;
-      width: calc(100% - 160px);
-      height: calc(100% - 160px);
-      background-color: rgba(0, 166, 255, 0.566);
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 90%;
+      max-width: 600px;
+      background-color: rgba(0, 166, 255, 0.8);
       border-radius: 20px;
+      padding: 40px;
       display: none;
       display: flex;
-      justify-content: center;
+      flex-direction: column;
       align-items: center;
       z-index: 2;
       opacity: 0;
@@ -45,15 +46,20 @@
     }
 
     #overlay.show {
-      display: block;
+      display: flex;
     }
 
     #overlay ul {
-      font-size: 6em;
+      font-size: 3em;
       font-family: "Neon Tubes 2";
-      text-shadow: 0 0 20px #ff0000, 0 0 40px #ff0000, 0 0 60px #ff0000;
-      margin-top: 6%;
-      list-style: none
+      text-shadow: 0 0 10px #ff0000, 0 0 20px #ff0000, 0 0 30px #ff0000;
+      margin-top: 20px;
+      padding: 0;
+      list-style: none;
+    }
+
+    #overlay ul li {
+      margin-bottom: 20px;
     }
 
     #bg-gif {
@@ -73,16 +79,23 @@
     }
 
     #audio-button {
-      position: absolute;
+      position: fixed;
       top: 20px;
       right: 20px;
       z-index: 10;
       font-size: 2em;
       color: #fff;
-      background-color: #00000000;
+      background-color: rgba(0, 0, 0, 0.5);
       border: none;
       outline: none;
       cursor: pointer;
+      padding: 10px;
+      border-radius: 50%;
+      transition: background-color 0.3s;
+    }
+
+    #audio-button:hover {
+      background-color: rgba(0, 0, 0, 0.8);
     }
 
     #ssd {
@@ -97,32 +110,42 @@
       height: 100%;
       opacity: 0;
     }
+
+    footer {
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+      text-align: center;
+      background-color: rgba(0, 0, 0, 0.5);
+      color: #fff;
+      padding: 10px 0;
+    }
+
+    footer p {
+      margin: 0;
+    }
   </style>
 </head>
-
 <body>
   <img src="yon.gif" alt="" id="ssd">
   <img src="mo.gif" alt="" id="bg-gif" />
   <div id="overlay">
+    <h1 style="font-size: 3em; margin-bottom: 40px;">欢迎来到陨莫的小破站</h1>
     <ul>
-      <li>欢迎来到</li>
-      <a href="介绍\自我介绍网站.html">
-        <li>陨莫的小破站</li>
-      </a>
+      <li><a href="介绍\自我介绍网站.html" style="color: #fff; text-decoration: none;">开始探索</a></li>
     </ul>
   </div>
   <button id="audio-button" onclick="toggleAudio()">打开BGM</button>
   <audio src="one.mp3" autoplay loop></audio>
 
-  <footer style="position:fixed; bottom:0px; left: 50%;
-  transform: translateX(-50%);">
+  <footer>
     <p>版权所有 &copy; 2023 陨莫</p>
   </footer>
+
   <script>
     const bgGif = document.getElementById("bg-gif");
     const overlay = document.getElementById("overlay");
     const audio = document.querySelector("audio");
-
 
     setTimeout(function () {
       document.getElementById('ssd').classList.add('fade-out');
@@ -148,5 +171,4 @@
     }
   </script>
 </body>
-
 </html>
